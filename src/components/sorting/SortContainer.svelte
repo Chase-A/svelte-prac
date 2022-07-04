@@ -1,5 +1,6 @@
 <script>
 
+import Buttons from './Buttons.svelte'
 import SortCard from "./SortCard.svelte";
 
     let peopleData = [
@@ -12,7 +13,7 @@ import SortCard from "./SortCard.svelte";
         {
             name: "Jaime",
             position: "Slugma",
-            age: 28,
+            age: 88,
             bio: "flushed face emoji",
         },
         {
@@ -21,12 +22,25 @@ import SortCard from "./SortCard.svelte";
             age: 27,
             bio: "pleading face emoji",
         },
+        {
+            name: "Hector",
+            position: "Slugma",
+            age: 47,
+            bio: "wet emoji",
+        },
+        {
+            name: "Jeff",
+            position: "CMO",
+            age: 17,
+            bio: "wet emoji",
+        },
     ];
 </script>
 
+<Buttons/>
+
 <section>
     {#each peopleData as person, i}
-        <!-- <SortCard /> -->
         <SortCard {...person} />
     {/each}
 </section>

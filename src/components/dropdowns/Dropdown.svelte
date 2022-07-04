@@ -1,4 +1,5 @@
 <script>
+    export let margined = false;
     let expanded = true	
     let orientation = ''
     function handleClick(){
@@ -7,7 +8,7 @@
     }
     </script>
 
-<section>
+<section style={margined && 'margin: 15px 8px'}>
     <div class='top-bar'>
         <h1>title</h1>
         <button class='arrow' on:click={handleClick} style={orientation}>^</button>
@@ -30,7 +31,6 @@
             padding: 5px;
             border-radius: 14px;
             background-color: rgba(250, 128, 114, 0.356);
-            margin: 10px;
         }
         h1{
             padding: .25rem;

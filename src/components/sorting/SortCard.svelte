@@ -1,8 +1,8 @@
 <script>
-let name = 'Jessie and James'
-let position = 'Team Rocket'
-let age = 40
-let bio = 'ez game'
+export let name = 'Name'
+export let position = 'Position'
+export let age = 0
+export let bio = 'bio'
 </script>
 
 <section>
