@@ -7,9 +7,17 @@
   import DropContainerGrid from "./components/dropdowns/DropContainerGrid.svelte";
   import SortContainer from "./components/sorting/SortContainer.svelte";
   import TimerContainer from "./components/timers/TimerContainer.svelte";
+  import Marquee from "./components/tickers/Marquee.svelte";
+  import Ticker from "./components/tickers/Ticker.svelte";
+
+
 </script>
 
 <main>
+  <Spacer />
+
+  <Ticker />
+  <Marquee />
   <Spacer />
 
   <TimerContainer />

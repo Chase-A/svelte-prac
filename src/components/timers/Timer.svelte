@@ -2,6 +2,8 @@
     let timerState = 0;
 	let elapsedTime = 0;
 	// rounded dependent var ??^
+	$: elapsedRounded = Math.round(elapsedTime/1000);
+
 	let interval = 0;
 	function handleStart() {
 		let startTime = Date.now()
@@ -12,11 +14,17 @@
 		}, 1000)
 		timerState = 1
 	}
+
+	function handleReset() {
+		clearInterval(interval)
+		elapsedTime = 0
+	}
 </script>
 
 <section>
-    <p class="time">{Math.round(elapsedTime/1000)}</p>
+    <p class="time">{elapsedRounded}</p>
     <button on:click={handleStart}>Start</button>
+	<button on:click={handleReset}>Reset</button>
 </section>
 
 <style>
