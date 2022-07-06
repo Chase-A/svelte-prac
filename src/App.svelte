@@ -6,9 +6,13 @@
   import DropContainerFlexInGrid from "./components/dropdowns/DropContainerFlexInGrid.svelte";
   import DropContainerGrid from "./components/dropdowns/DropContainerGrid.svelte";
   import SortContainer from "./components/sorting/SortContainer.svelte";
+  import TimerContainer from "./components/timers/TimerContainer.svelte";
 </script>
 
 <main>
+  <Spacer />
+
+  <TimerContainer />
   <Spacer />
 
   <SortContainer />

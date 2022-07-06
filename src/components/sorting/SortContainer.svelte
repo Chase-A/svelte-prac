@@ -1,6 +1,6 @@
 <script>
 
-import Buttons from './Buttons.svelte'
+import ButtonContainer from './ButtonContainer.svelte'
 import SortCard from "./SortCard.svelte";
 
     let peopleData = [
@@ -34,14 +34,40 @@ import SortCard from "./SortCard.svelte";
             age: 17,
             bio: "wet emoji",
         },
+        {
+            name: "Antonio",
+            position: "CMO",
+            age: 56,
+            bio: "moist emoji",
+        },
+        {
+            name: "Augustus",
+            position: "Ligma",
+            age: 26,
+            bio: "moisturizer emoji",
+        },
     ];
+
+    const categories = ['All', 'CMO', 'Slugma', 'Ligma']
+    let selected = 'All'
+
+    function filterSelection(e) {
+        console.dir(e.target.dataset.name)
+        selected = e.target.dataset.name
+    }
 </script>
 
-<Buttons/>
+<ButtonContainer>
+    {#each categories as category}
+        <button class="btn" class:active={selected === category} data-name={category} on:click={filterSelection}>{category}</button>
+    {/each}
+</ButtonContainer>
 
 <section>
     {#each peopleData as person, i}
+    {#if person.position === selected || selected === 'All'} 
         <SortCard {...person} />
+    {/if}
     {/each}
 </section>
 
@@ -53,4 +79,25 @@ import SortCard from "./SortCard.svelte";
         max-width: 750px;
         margin: 0 auto;
     }
+
+    /* Style the buttons */
+.btn {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 1.2rem;
+	border: 4px solid #000;
+	margin: 5px;
+	padding: 12px 10px 10px 10px;
+	background-color: white;
+	cursor: pointer;
+    line-height: 1rem;
+}
+
+
+	/* Add a dark background color to the active button */
+.btn:active,
+.active {
+	background-color: #000;
+	color: white;
+}
 </style>
