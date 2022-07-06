@@ -1,6 +1,7 @@
 <script>
     let timerState = 0;
 	let elapsedTime = 0;
+	// rounded dependent var ??^
 	let interval = 0;
 	function handleStart() {
 		let startTime = Date.now()
